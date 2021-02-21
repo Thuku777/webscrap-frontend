@@ -1,13 +1,14 @@
-<div *ngFor="let article of articleList" class="container">
+<div *ngFor="let news of newsStation" class="container">
     <div>
-        <p>Channel</p>
-        <div class="card" style="width:400px">
+        <p>{{news.id}}</p>
+        <div *ngFor="let name of news.news_newsstation.slice(0, 4);"  class="card" style="width:400px">
             <div class="row">
                 <div class="col-sm-3">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%">
+                    <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image" style="width:100%"> -->
+                <p>{{name.created_at | date:'shortDate'}}</p>
                 </div>
                 <div class="card-body col-sm-8">
-                    <a href="">{{article.title}}</a>
+                    <a href="{{name.source_link}}">{{name.title}}</a>
                 </div>
             </div>
         </div>

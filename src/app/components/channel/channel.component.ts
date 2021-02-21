@@ -9,6 +9,7 @@ import { RestApiService } from '../../services/shared/rest-api.service';
 export class ChannelComponent implements OnInit {
 
   articleList: any;
+  newsStation: any;
 
   constructor(private restApiService: RestApiService) { }
 
@@ -17,6 +18,11 @@ export class ChannelComponent implements OnInit {
       console.log(data);
       this.articleList = data;
     });
+
+    this.restApiService.getNewsStation().subscribe((data) => {
+      console.log(data);
+      this.newsStation = data;
+    })
   }
 
 }

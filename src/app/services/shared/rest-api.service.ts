@@ -11,6 +11,10 @@ export class RestApiService {
 
   apiURLHeader = 'https://kenyamediabackend.herokuapp.com/api/aggregator/maincategory'
 
+  apiURLSubNav = 'https://kenyamediabackend.herokuapp.com/api/aggregator/sub-category'
+
+  apiNewsStation = 'https://kenyamediabackend.herokuapp.com/api/aggregator/news-station'
+
   constructor(private http: HttpClient) { }
 
   // Get all articles
@@ -21,6 +25,16 @@ export class RestApiService {
   // Get the headers in navbar
   getHeaders() {
     return this.http.get(this.apiURLHeader);
+  }
+
+  // Get the headers in navbar
+  getSubHeaders() {
+    return this.http.get(this.apiURLSubNav);
+  }
+
+  // Get the specific news station 
+  getNewsStation() {
+    return this.http.get(this.apiNewsStation)
   }
 
 }

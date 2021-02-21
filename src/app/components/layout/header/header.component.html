@@ -16,8 +16,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
               {{header.name}}
             </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">{{header.newsstation_maincategory.name}}</a>
+            <div *ngIf="header.newsstation_maincategory" class="dropdown-menu">
+              <a *ngFor="let name of header.newsstation_maincategory"  class="dropdown-item" href="#">{{name.name}}</a>
             </div>
           </li>
 

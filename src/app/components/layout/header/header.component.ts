@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
 
   faSearch = faSearch;
   headersList: any;
+  subNav: any;
 
   collapsed = true;
   toggleCollapsed(): void {
@@ -23,6 +24,10 @@ export class HeaderComponent implements OnInit {
       this.restApiService.getHeaders().subscribe((data) => {
         console.log(data);
         this.headersList = data;
+      });
+      this.restApiService.getSubHeaders().subscribe((data) => {
+        console.log(data);
+        this.subNav = data;
       });
     }
   
