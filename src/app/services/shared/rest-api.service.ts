@@ -7,13 +7,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class RestApiService {
 
   // API
-  apiURLArticles = 'https://kenyamediabackend.herokuapp.com/api/aggregator/all-news'
+  apiURLArticles = 'http://backendtest.kenyamedialive.com/api/aggregator/all-news'
 
-  apiURLHeader = 'https://kenyamediabackend.herokuapp.com/api/aggregator/maincategory'
+  apiURLHeader = 'http://backendtest.kenyamedialive.com/api/aggregator/maincategory'
 
-  apiURLSubNav = 'https://kenyamediabackend.herokuapp.com/api/aggregator/sub-category'
+  apiURLSubNav = 'http://backendtest.kenyamedialive.com/api/aggregator/sub-category'
 
-  apiNewsStation = 'https://kenyamediabackend.herokuapp.com/api/aggregator/news-station'
+  apiNewsStation = 'http://backendtest.kenyamedialive.com/api/aggregator/news-station'
 
   constructor(private http: HttpClient) { }
 
