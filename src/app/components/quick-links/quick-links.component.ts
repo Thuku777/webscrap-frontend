@@ -1,25 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../../services/shared/rest-api.service'; 
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-channel',
-  templateUrl: './channel.component.html',
-  styleUrls: ['./channel.component.css']
+  selector: 'app-quick-links',
+  templateUrl: './quick-links.component.html',
+  styleUrls: ['./quick-links.component.css']
 })
-export class ChannelComponent implements OnInit {
+export class QuickLinksComponent implements OnInit {
 
-  articleList: any;
   newsStation: any;
 
   constructor(private restApiService: RestApiService) { }
 
   ngOnInit(): void {
-    this.restApiService.getArticles().subscribe((data) => {
-      console.log(data);
-      this.articleList = data;
-    });
-
     this.restApiService.getNewsStation().subscribe((data) => {
       console.log(data);
       this.newsStation = data;

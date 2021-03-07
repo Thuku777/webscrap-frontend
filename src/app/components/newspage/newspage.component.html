@@ -1,0 +1,13 @@
+<div *ngFor="let news of newsStation">
+    <br>
+    <p class="btn btn-sm btn-block btn-primary">{{news.name}}</p>
+    <div *ngFor="let name of news.news_newsstation;"  class="card mb-2">
+        <div class="row m-2">
+            <p>
+                <i>{{name.created_at | date:'longDate'}}</i>
+                <br>
+                <b>{{name.title}}....</b>
+            </p>
+        </div>
+    </div>
+</div>

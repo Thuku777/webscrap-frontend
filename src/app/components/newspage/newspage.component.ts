@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../../services/shared/rest-api.service'; 
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
-  selector: 'app-channel',
-  templateUrl: './channel.component.html',
-  styleUrls: ['./channel.component.css']
+  selector: 'app-newspage',
+  templateUrl: './newspage.component.html',
+  styleUrls: ['./newspage.component.css']
 })
-export class ChannelComponent implements OnInit {
+export class NewspageComponent implements OnInit {
 
   articleList: any;
   newsStation: any;
+  name: any;
 
-  constructor(private restApiService: RestApiService) { }
+  constructor(private route: ActivatedRoute, private restApiService: RestApiService) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.name = params['name'];
+    });
+
     this.restApiService.getArticles().subscribe((data) => {
       console.log(data);
       this.articleList = data;
