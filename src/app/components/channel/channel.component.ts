@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../../services/shared/rest-api.service'; 
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-channel',

@@ -1,1 +1,18 @@
-<p>homepage works!</p>
+<div>
+    <div class="row">
+        <div *ngFor="let news of newsStation" class="col-sm-6">
+            <br>
+            <p class="btn btn-sm btn-block btn-primary">{{news.name}}</p>
+            <div *ngFor="let name of news.news_newsstation.slice(0, 4);"  class="card mb-2">
+                <div class="row m-2">
+                    <p>
+                        <i>{{name.created_at | date:'longDate'}}</i>
+                        <br>
+                        <a [routerLink]="['/channel',name.id]" routerLinkActive="active" >{{name.title}}</a>
+                    </p>
+                </div>
+            </div>
+            <!-- <a routerLink="/allNews" routerLinkActive="active" class="btn btn-sm btn-block btn-outline-dark">View More News</a> -->
+        </div>
+    </div>
+</div>

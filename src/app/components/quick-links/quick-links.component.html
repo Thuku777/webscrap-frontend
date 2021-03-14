@@ -1,5 +1,5 @@
 <div>
     <i *ngFor="let news of newsStation">
-        <a href="{{news.main_link}}" class="btn btn-sm btn-outline-dark m-2">{{news.name}}</a>
+        <a  [routerLink]="['/allNews',news.name]" routerLinkActive="active" class="btn btn-sm btn-outline-dark m-2">{{news.name}}</a>
     </i>
 </div>

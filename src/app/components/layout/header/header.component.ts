@@ -25,10 +25,10 @@ export class HeaderComponent implements OnInit {
         console.log(data);
         this.headersList = data;
       });
-      this.restApiService.getSubHeaders().subscribe((data) => {
-        console.log(data);
-        this.subNav = data;
-      });
+      // this.restApiService.getSubHeaders().subscribe((data) => {
+      //   console.log(data);
+      //   this.subNav = data;
+      // });
     }
   
 }

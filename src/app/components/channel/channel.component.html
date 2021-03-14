@@ -3,20 +3,18 @@
         <app-quick-links></app-quick-links>
     </div>
     <div class="row">
-        <div *ngFor="let news of newsStation" class="col-sm-6">
-            <br>
-            <p class="btn btn-sm btn-block btn-primary">{{news.name}}</p>
-            <div *ngFor="let name of news.news_newsstation.slice(0, 4);"  class="card mb-2">
+        <div *ngFor="let news of newsStation" class="col-sm-10">
+            <div *ngFor="let name of news.news_newsstation"  class="card mb-2">
                 <div class="row m-2">
                     <p>
                         <i>{{name.created_at | date:'longDate'}}</i>
                         <br>
-                        <b>{{name.title}}....</b>
+                        <b>{{name.title}}</b>
+                        <br>
+                        <b>{{name.description}}</b>
                     </p>
-                    <a href="{{name.source_link}}" class="btn btn-sm btn-outline-primary">Read More</a>
                 </div>
             </div>
-            <a routerLink="/allNews" routerLinkActive="active" class="btn btn-sm btn-block btn-outline-dark">View More News</a>
         </div>
     </div>
 </div>
