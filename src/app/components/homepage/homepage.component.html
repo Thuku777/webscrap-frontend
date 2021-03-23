@@ -2,7 +2,7 @@
     <div class="row">
         <div *ngFor="let news of newsStation" class="col-sm-6">
             <br>
-            <p class="btn btn-sm btn-block btn-primary">{{news.name}}</p>
+            <p class="btn btn-sm btn-block">{{news.name}}</p>
             <div *ngFor="let name of news.news_newsstation.slice(0, 4);"  class="card mb-2">
                 <div class="row m-2">
                     <p>
@@ -12,7 +12,6 @@
                     </p>
                 </div>
             </div>
-            <!-- <a routerLink="/allNews" routerLinkActive="active" class="btn btn-sm btn-block btn-outline-dark">View More News</a> -->
         </div>
     </div>
 </div>

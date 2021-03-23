@@ -1,34 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Logo</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse"
-           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-           aria-expanded="false" aria-label="Toggle navigation"
-           (click)="toggleCollapsed()">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li *ngFor="let header of headersList" class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              {{header.name}}
-            </a>
-            <div *ngIf="header.newsstation_maincategory" class="dropdown-menu">
-              <a *ngFor="let name of header.newsstation_maincategory"  class="dropdown-item" href="#">{{name.name}}</a>
-            </div>
-          </li>
-
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit"><fa-icon [icon]="faSearch"></fa-icon></button>
-        </form>
-      </div>
-    </div>
+<nav>
+  <a class="links" href="#">Home</a>
+  <div *ngFor="let header of headersList" class="subnav">
+  <button class="sub-btn">{{header.name}}</button>
+  <div *ngIf="header.newsstation_maincategory" class="sub-content">
+  <a *ngFor="let name of header.newsstation_maincategory" class="links" href="#">{{name.name}}</a>
+  </div>
+  </div>
   </nav>
-
 
 
