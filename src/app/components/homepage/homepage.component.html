@@ -8,7 +8,7 @@
                     <p>
                         <i>{{name.created_at | date:'longDate'}}</i>
                         <br>
-                        <a [routerLink]="['/channel',name.id]" routerLinkActive="active" >{{name.title}}</a>
+                        <a href="{{name.source_link}}">{{name.title}}</a>
                     </p>
                 </div>
             </div>

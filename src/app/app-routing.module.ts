@@ -6,7 +6,6 @@ import { NewspageComponent }from './components/newspage/newspage.component';
 
 const routes: Routes = [
   { path: 'allNews/name', component: NewspageComponent },
-  { path: 'channel/:id', component: ChannelComponent },
   { path: '', component: HomepageComponent}
 ];
 

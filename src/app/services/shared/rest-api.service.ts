@@ -15,6 +15,8 @@ export class RestApiService {
 
   apiNewsStation = 'https://kenyamediabackend.herokuapp.com/api/aggregator/news-station'
 
+  // apiSpecificNewsStation = 'http://127.0.0.1:8000/api/aggregator/specificnewsstation?ref='
+
   constructor(private http: HttpClient) { }
 
   // Get all articles
