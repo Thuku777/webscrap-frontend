@@ -15,13 +15,19 @@ export class RestApiService {
 
   apiNewsStation = 'https://kenyamediabackend.herokuapp.com/api/aggregator/news-station'
 
-  // apiSpecificNewsStation = 'http://127.0.0.1:8000/api/aggregator/specificnewsstation?ref='
+  // apiSpecificNewsStation = 'http://127.0.0.1:8000/api/aggregator/specificnewsstation?'
+
+  apiSpecificNewsStation = 'https://kenyamediabackend.herokuapp.com/api/aggregator/specificnewsstation?'
 
   constructor(private http: HttpClient) { }
 
   // Get all articles
   getArticles() {
     return this.http.get(this.apiURLArticles);
+  }
+
+  getNewsPage(name: any) {
+    return this.http.get(this.apiSpecificNewsStation + `ref=${name}`);
   }
 
   // Get the headers in navbar

@@ -23,8 +23,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
