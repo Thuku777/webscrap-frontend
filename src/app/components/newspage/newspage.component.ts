@@ -17,9 +17,10 @@ export class NewspageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private restApiService: RestApiService) { }
 
   ngOnInit(): void {
-    // this.route.queryParams.subscribe(params => {
-    //   this.name = params['name'];
-    // });
+    this.route.queryParams.subscribe(params => {
+      this.name = params['name'];
+      console.log(this.name);
+    });
 
     this.restApiService.getNewsPage(this.name).subscribe((data) => {
       console.log(data);
