@@ -35,14 +35,7 @@ export class NewspageComponent implements OnInit {
       this.name = params['name'];
       console.log(this.name);
     });
-
-    this.route.params.subscribe(
-      params => {
-          const name = +params['name'];
-          this.restApiService.getNewsPage(name);
-      }
-  );
-
+    
     this.restApiService.getNewsPage(this.name).subscribe((data) => {
       console.log(data);
       this.newsPage = data;
